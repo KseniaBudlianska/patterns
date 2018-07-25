@@ -2,13 +2,13 @@ package builder_user_example;
 
 public class User {
 
-    private String username;
-    private String email;
-    private String address;
-    private String gender;
-    private String phone;
+    private final String username;
+    private final String email;
+    private final String address;
+    private final String gender;
+    private final String phone;
 
-    public User(String username, String email, String address, String gender, String phone) {
+    private User(String username, String email, String address, String gender, String phone) {
         this.username = username;
         this.email = email;
         this.address = address;
@@ -18,25 +18,20 @@ public class User {
 
     @Override public String toString() {
         return String.format("Username: %s; Email: %s; Address: %s; Gender: %s; Phone: %s",
-            username, email, address, gender, email);
+            username, email, address, gender, phone);
     }
 
     public static class UserBuilder {
 
-        private String username;
-        private String email;
+        private final String username;
+        private final String email;
         private String address;
         private String gender;
         private String phone;
 
-        public UserBuilder setUsername(String username) {
+        public UserBuilder(String username, String email) {
             this.username = username;
-            return this;
-        }
-
-        public UserBuilder setEmail(String email) {
             this.email = email;
-            return this;
         }
 
         public UserBuilder setAddress(String address) {

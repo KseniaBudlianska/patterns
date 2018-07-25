@@ -30,7 +30,8 @@ public class Email {
     public void send() {
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         return String.format("Title: %s; Recipients: %s; Message: %s.", getTitle(), getRecipients(), getMessage());
     }
 
